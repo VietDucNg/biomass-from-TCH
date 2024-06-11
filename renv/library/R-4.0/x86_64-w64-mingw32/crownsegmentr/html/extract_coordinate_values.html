@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Extract coordinate data from an object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for extract_coordinate_values {crownsegmentr}"><tr><td>extract_coordinate_values {crownsegmentr}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Extract coordinate data from an object</h2>
+
+<h3>Description</h3>
+
+<p>This function extracts three numeric columns from the input table. If
+possible, columns which are named x/X, y/Y, or z/Z.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+extract_coordinate_values(coordinate_table)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>coordinate_table</code></td>
+<td>
+<p>An object which is valid according to
+<code>validate_coordinate_table</code> (i.e. data.frame-like and contains at
+least three numeric columns).</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A <code>data.frame</code> with just three columns that are expected to hold
+the x-, y-, and z-coordinates in that order.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>crownsegmentr</em> version 0.4.4 <a href="00Index.html">Index</a>]</div>
+</body></html>

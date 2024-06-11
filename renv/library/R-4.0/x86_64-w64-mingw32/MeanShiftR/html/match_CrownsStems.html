@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Match crown projection polygons with tree stem positions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for match_CrownsStems {MeanShiftR}"><tr><td>match_CrownsStems {MeanShiftR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Match crown projection polygons with tree stem positions</h2>
+
+<h3>Description</h3>
+
+<p>The function links remote sensing derived crown projection polygons with inventory derived tree stems.
+The algorithm sorts all polygons by decreasing area size. Then, starting with the largest crown it checks all
+stem positions that fall inside the crown projection area and selects the stem with the largest diameter
+and assigns it to the crown. The stem is removed from the set of available stems and the same procedure
+is conducted for the next smaller crown and further on until the smallest crown.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+match_CrownsStems(crowns.spdf, stems.spdf, DBH.min = 0.05)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>crowns.spdf</code></td>
+<td>
+<p>SpatialPolygonsDataFrame of tree crown projection areas</p>
+</td></tr>
+<tr valign="top"><td><code>stems.spdf</code></td>
+<td>
+<p>SpatialPointsDataFrame of tree stem foot positions (required columns: X, Y, DBH, Species, TreeID)</p>
+</td></tr>
+<tr valign="top"><td><code>DBH.min</code></td>
+<td>
+<p>Minimum stem diameter to be considered</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>SpatialPolygonsDataFrame of tree crown projection areas with additional columns containing the attributes of the assigned stem for each crown
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>MeanShiftR</em> version 0.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

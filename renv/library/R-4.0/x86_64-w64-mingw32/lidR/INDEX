@@ -1,0 +1,115 @@
+$<-,LAS-method          Inherited but modified methods from sp
+Gatziolis2019           Sensor tracking algorithm
+LAD                     Leaf area density
+LAS-class               An S4 class to represent a .las or .laz file
+LAScatalog-class        An S4 class to represent a catalog of .las or
+                        .laz files
+LASheader               Create a 'LASheader' object
+LASheader-class         An S4 class to represent the header of .las or
+                        .laz files
+Roussel2020             Sensor tracking algorithm
+VCI                     Vertical Complexity Index
+add_attribute           Add attributes into a LAS object
+area                    Surface covered by a LAS* object
+as.list.LASheader       Transform to a list
+as.spatial              Transform a LAS* object into an sp object
+asprs                   ASPRS LAS Classification
+catalog_apply           LAScatalog processing engine
+catalog_boundaries      Computes the polygon that encloses the points
+catalog_intersect       Subset a LAScatalog with a spatial object
+catalog_makechunks      Subdivide a LAScatalog into chunks
+catalog_options_tools   Get or set LAScatalog processing engine options
+catalog_retile          Retile a LAScatalog
+catalog_select          Select LAS files manually from a LAScatalog
+classify_ground         Classify points as 'ground'
+classify_noise          Classify points as 'noise'
+classify_poi            Classify points of interest
+clip                    Clip points in regions of interest
+cloud_metrics           Compute metrics for a cloud of points
+concaveman              A very fast 2D concave hull algorithm
+csf                     Ground Segmentation Algorithm
+dalponte2016            Individual Tree Segmentation Algorithm
+decimate_points         Decimate a LAS object
+delineate_crowns        Compute the hull of each tree.
+deprecated              Deprecated functions in lidR
+dsmtin                  Digital Surface Model Algorithm
+entropy                 Normalized Shannon diversity index
+extent,LAS-method       Extent
+filter_duplicates       Filter duplicated points
+filter_poi              Filter points of interest with matching
+                        conditions
+filter_surfacepoints    Filter the surface points
+filters                 Predefined point of interest filters
+find_localmaxima        Local Maximum Filter
+find_trees              Individual tree detection
+gap_fraction_profile    Gap fraction profile
+grid_canopy             Digital Surface Model
+grid_density            Map the pulse or point density
+grid_metrics            Area-Based Approach
+grid_terrain            Digital Terrain Model
+homogenize              Point Cloud Decimation Algorithm
+interpret_waveform      Convert full waveform data into a regular point
+                        cloud
+is                      A set of boolean tests on objects
+ivf                     Noise Segmentation Algorithm
+knnidw                  Spatial Interpolation Algorithm
+kriging                 Spatial Interpolation Algorithm
+las_check               Inspect a LAS object
+las_utilities           LAS utilities
+li2012                  Individual Tree Segmentation Algorithm
+lidR-LAScatalog-drivers
+                        LAScatalog drivers
+lidR-package            lidR: airborne LiDAR for forestry applications
+lidR-parallelism        Parallel computation in lidR
+lidR-spatial-index      Spatial index
+lidrpalettes            Palettes
+lmf                     Individual Tree Detection Algorithm
+manual                  Individual Tree Detection Algorithm
+maxima                  Point Cloud Decimation Algorithm
+merge_spatial           Merge a point cloud with a source of spatial
+                        data
+normalize_height        Remove the topography from a point cloud
+normalize_intensity     Normalize intensity
+p2r                     Digital Surface Model Algorithm
+pitfree                 Digital Surface Model Algorithm
+plot                    Plot a LAS* object
+plot.lasmetrics3d       Plot voxelized LiDAR data
+plot_3d                 Add a spatial object to a point cloud scene
+plot_metrics            Computes metrics for each plot of a ground
+                        inventory
+pmf                     Ground Segmentation Algorithm
+point_metrics           Point-based metrics
+print                   Summary and Print for 'LAS*' objects
+projection              Get or set the projection of a LAS* object
+random                  Point Cloud Decimation Algorithm
+random_per_voxel        Point Cloud Decimation Algorithm
+range_correction        Intensity normalization algorithm
+rbind                   Merge LAS* objects
+readLAS                 Read .las or .laz files
+readLAScatalog          Create an object of class LAScatalog
+readLASheader           Read a .las or .laz file header
+retrieve_pulses         Retrieve individual pulses, flightlines or
+                        scanlines
+rumple_index            Rumple index of roughness
+segment_shapes          Eigenvalues-based features at the point level
+segment_snags           Snag classification
+segment_trees           Individual tree segmentation
+set_lidr_threads        Set or get number of threads that lidR should
+                        use
+shape_detection         Algorithms for shape detection of the local
+                        point neighborhood
+silva2016               Individual Tree Segmentation Algorithm
+smooth_height           Smooth a point cloud
+sor                     Noise Segmentation Algorithm
+stdmetrics              Predefined standard metrics functions
+tin                     Spatial Interpolation Algorithm
+track_sensor            Reconstruct the trajectory of the LiDAR sensor
+                        using multiple returns
+tree_metrics            Compute metrics for each tree
+util_makeZhangParam     Parameters for progressive morphological filter
+voxel_metrics           Voxelize the space and compute metrics for each
+                        voxel
+voxelize_points         Voxelize a point cloud
+watershed               Individual Tree Segmentation Algorithm
+wing2015                Snags Segmentation Algorithm
+writeLAS                Write a .las or .laz file

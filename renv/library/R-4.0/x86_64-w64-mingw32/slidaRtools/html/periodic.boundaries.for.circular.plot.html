@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Periodic boundaries for circular forest plots</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for periodic.boundaries.for.circular.plot {slidaRtools}"><tr><td>periodic.boundaries.for.circular.plot {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Periodic boundaries for circular forest plots</h2>
+
+<h3>Description</h3>
+
+<p>Function that creates periodic boundaries for voxelforests along circular plot borders
+(e.g. large lidar footprints or circular inventory plots). Tree crown voxels
+that exceed the boundaries of the circle re-appear on the opposite side
+of the circle. The placement of trees is based on the polar coordinates of
+the stem positions (distance and angle to the circle center). All trees with
+stems inside the circle are copied to exist a second time outside of the
+circle at the position opposite of the circle center and with the same distance
+to the boundary, but outwards.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+periodic.boundaries.for.circular.plot(vxf.dt, Xctr, Yctr, radius, clip = T)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>vxf.dt</code></td>
+<td>
+<p>Data.table containing voxelforest object created with make.voxelforest; columns of the stem positions Xstem and Ystem are crucial</p>
+</td></tr>
+<tr valign="top"><td><code>Xctr</code></td>
+<td>
+<p>X-coordinate of the plot center</p>
+</td></tr>
+<tr valign="top"><td><code>Yctr</code></td>
+<td>
+<p>Y-coordinate of the plot center</p>
+</td></tr>
+<tr valign="top"><td><code>radius</code></td>
+<td>
+<p>of the circular plot</p>
+</td></tr>
+<tr valign="top"><td><code>clip</code></td>
+<td>
+<p>Boolean to specify whether output should be clipped to the circle (default) or all</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.table containing the voxelforest with periodic boundaries
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,17 @@
+MeanShift_Classical     Mean shift clustering
+MeanShift_Voxels        Mean shift clustering using a discrete voxel
+                        space
+calc_SpatialIndex       Calculate spatial indices for points in 2D
+                        space
+hello                   Hello, World!
+make_CrownPolygons      Fit polygon hulls around tree crowns in a
+                        clustered point cloud to derive crown
+                        projection areas
+match_CrownsStems       Match crown projection polygons with tree stem
+                        positions
+parallel_MeanShift      Parallel application of mean shift clustering
+                        for individual tree crown delineation
+rcpp_hello              Hello, Rcpp!
+split_BufferedPointCloud
+                        Split point cloud into smaller point clouds
+                        with buffer area around

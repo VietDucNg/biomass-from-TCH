@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Make a voxel forest from a tree list using parallelization</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for make.voxelforest.dt.parallel {slidaRtools}"><tr><td>make.voxelforest.dt.parallel {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Make a voxel forest from a tree list using parallelization</h2>
+
+<h3>Description</h3>
+
+<p>Function that creates a voxel forest and returns it as a data.table.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+make.voxelforest.dt.parallel(
+  trees.dt,
+  minx = 0,
+  maxx,
+  miny = 0,
+  maxy,
+  vxl.per.sqm = 4,
+  stems = F,
+  ground = T,
+  aggregation.func = "max",
+  keep = NA,
+  run.parallel = F,
+  frac.cores = 0.5,
+  res = 100
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>trees.dt</code></td>
+<td>
+<p>A data.table (or data.frame) that contains all trees that form the voxelforest provided
+with specific requirements: Each row represents one individual. The columns need to
+have the following names and content: X = X-coordinate of tree position, Y = Y-coordinate
+of tree position; H = tree height (m), CD = tree crown diameter (m), CL = tree crown length (m),
+LAD = leaf area density of the tree (m2/m3), CS = tree crown shape (coding: 1 = cylinder,
+2 = spheroid, 3 = cone, 4 = icecone)</p>
+</td></tr>
+<tr valign="top"><td><code>minx</code></td>
+<td>
+<p>Minimum X-coordinate of the simulated area</p>
+</td></tr>
+<tr valign="top"><td><code>maxx</code></td>
+<td>
+<p>Maximum X-coordinate of the simulated area</p>
+</td></tr>
+<tr valign="top"><td><code>miny</code></td>
+<td>
+<p>Minimum Y-coordinate of the simulated area</p>
+</td></tr>
+<tr valign="top"><td><code>maxy</code></td>
+<td>
+<p>Maximum Y-coordinate of the simulated area</p>
+</td></tr>
+<tr valign="top"><td><code>vxl.per.sqm</code></td>
+<td>
+<p>Spatial resolution of the simulation in voxels per square meter</p>
+</td></tr>
+<tr valign="top"><td><code>stems</code></td>
+<td>
+<p>Boolean whether to include tree stems in the simulation or not</p>
+</td></tr>
+<tr valign="top"><td><code>ground</code></td>
+<td>
+<p>Boolean whether to include forest ground in the simulation or not</p>
+</td></tr>
+<tr valign="top"><td><code>aggregation.func</code></td>
+<td>
+<p>Function specifying how to deal with voxels in overlapping crowns
+(that belong to more than one tree): Either the maximum, sum, mean or minimum of all
+different values for that voxel can be taken, or if set to NA the values do not get
+aggregated, thus multiple rows for that voxel are kept in the final voxelforest output.
+Aggregation can only be performed if no additional columns should be kept, to avoid ambiguities.
+If the parameter keep is set to something other than NA, it has priority and aggregation is
+suppressed.</p>
+</td></tr>
+<tr valign="top"><td><code>keep</code></td>
+<td>
+<p>Optional vector of column names from which information should be kept
+in each voxel of the output. E.g. choose keep=c(&quot;X&quot;, &quot;Y&quot;, &quot;TreeID&quot;) if stem positions and
+ID of each tree should be available for each voxel. X and Y are special cases, because in
+the output the columns &quot;X&quot; and &quot;Y&quot; specify the voxel coordinates. Thus, the columns
+containing the stem coordinates are renamed to &quot;Xstem&quot; and &quot;Ystem&quot;. Other kept columns
+will appear in the output under their original input name.</p>
+</td></tr>
+<tr valign="top"><td><code>run.parallel</code></td>
+<td>
+<p>boolean to specify whether to use parallelization or not</p>
+</td></tr>
+<tr valign="top"><td><code>frac.cores</code></td>
+<td>
+<p>fraction of available cores to use for parallelization</p>
+</td></tr>
+<tr valign="top"><td><code>res</code></td>
+<td>
+<p>resolution (side length) of the parallelized subunits</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.table object containing a XYZ-table of tree crown voxels, ground voxels and maybe tree stem voxels
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

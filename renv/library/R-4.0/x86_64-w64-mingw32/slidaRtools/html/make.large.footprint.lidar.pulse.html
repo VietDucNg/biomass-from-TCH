@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Scan a voxel forest with a virtual large footprint Lidar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for make.large.footprint.lidar.pulse {slidaRtools}"><tr><td>make.large.footprint.lidar.pulse {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Scan a voxel forest with a virtual large footprint Lidar</h2>
+
+<h3>Description</h3>
+
+<p>Function that simulates a Lidar waveform of a) a given voxel forest or b) a given lidar point
+cloud or CHM and returns a profile vector.
+The horizontal energy distribution inside the pulse is simulated with a Gaussian distribution.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+make.large.footprint.lidar.pulse(
+  xyz.dt,
+  input = "vxf",
+  Xctr,
+  Yctr,
+  diameter = 25,
+  binwidth = 1,
+  k = 0.2,
+  sd = 0.5 * 12.5,
+  VG.ratio = 2.5,
+  weight.var = NA
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>xyz.dt</code></td>
+<td>
+<p>Input data.table which can either be a) a voxel forest created with make.voxelforest function (containing columns X, Y, Z and LAI among others) or b) a discrete lidar point cloud or CHM (containing columns X, Y and Z)</p>
+</td></tr>
+<tr valign="top"><td><code>input</code></td>
+<td>
+<p>Switch for the input type, which has to be either &quot;vxf&quot; for voxel forest or &quot;lid&quot; for discrete lidar data</p>
+</td></tr>
+<tr valign="top"><td><code>Xctr</code></td>
+<td>
+<p>X-coordinate of the pulse center</p>
+</td></tr>
+<tr valign="top"><td><code>Yctr</code></td>
+<td>
+<p>Y-coordinate of the pulse center</p>
+</td></tr>
+<tr valign="top"><td><code>diameter</code></td>
+<td>
+<p>Diameter of the pulse footprint in meters (e.g. LVIS = 25 m, SLICER = 10 m, Icesat GLAS = 70 m, GEDI = 25 m)</p>
+</td></tr>
+<tr valign="top"><td><code>binwidth</code></td>
+<td>
+<p>Vertical resolution of the waveform in meters</p>
+</td></tr>
+<tr valign="top"><td><code>k</code></td>
+<td>
+<p>Extinction coefficient (only relevant if input = &quot;vxf&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>sd</code></td>
+<td>
+<p>Standard deviation of the Gaussian energy distribution (for a curve that approaches 0 at the margin of the pulse use sd = 0.4\*radius; for GEDI simulations commonly sd = 0.5\*radius is used, which leads to a more truncated energy distribution)</p>
+</td></tr>
+<tr valign="top"><td><code>VG.ratio</code></td>
+<td>
+<p>Reflectance ratio between vegetation surface and ground surface</p>
+</td></tr>
+<tr valign="top"><td><code>weight.var</code></td>
+<td>
+<p>Weighting variable, e.g. set to &quot;Intensity&quot; to use the intensity column in a lidar point cloud</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Vector of the Lidar waveform (normalized to a sum of 1)
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

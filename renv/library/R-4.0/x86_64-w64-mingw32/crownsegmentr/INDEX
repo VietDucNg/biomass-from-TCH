@@ -1,0 +1,16 @@
+calculate_modes_flexible
+                        Calculate modes with the AMS3D algorithm for a
+                        lidar point cloud of a forest
+extract_coordinate_values
+                        Extract coordinate data from an object
+segment_tree_crowns     Segment Tree Crowns in a 3D Point Cloud
+segment_tree_crowns_core
+                        Calls the C++ back-end and the DBSCAN algorithm
+                        to perform the segmentation
+validate_scale_n_offset_are_consistent
+                        Asserts that all files referenced by a
+                        LAScatalog have the same scale and offset
+                        values.
+validate_write_crown_id_also_to_file_for_LAScatalogs
+                        Ensures that crown IDs are written to output
+                        files of the LAScatalog

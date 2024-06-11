@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Make a vectorgrid</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for make.vectorgrid {slidaRtools}"><tr><td>make.vectorgrid {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Make a vectorgrid</h2>
+
+<h3>Description</h3>
+
+<p>Function that creates as vectorgrid of rectangular cells.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+make.vectorgrid(
+  ll.x = 0,
+  ll.y = 0,
+  size.x = 1,
+  size.y = 1,
+  n.x = 1,
+  n.y = 1,
+  rot.angle = 0
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>ll.x</code></td>
+<td>
+<p>X-coordinate of the lower left corner</p>
+</td></tr>
+<tr valign="top"><td><code>ll.y</code></td>
+<td>
+<p>Y-coordinate of the lower left corner</p>
+</td></tr>
+<tr valign="top"><td><code>size.x</code></td>
+<td>
+<p>Side length of one cell in X-direction</p>
+</td></tr>
+<tr valign="top"><td><code>size.y</code></td>
+<td>
+<p>Side length of one cell in Y-direction</p>
+</td></tr>
+<tr valign="top"><td><code>n.x</code></td>
+<td>
+<p>Number of cells in X-direction</p>
+</td></tr>
+<tr valign="top"><td><code>n.y</code></td>
+<td>
+<p>Number of cells in Y-direction</p>
+</td></tr>
+<tr valign="top"><td><code>rot.angle</code></td>
+<td>
+<p>Rotation angle clockwise in degrees</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>SpatialPolygonsDataFrame
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+testgrid.spdf &lt;- make.vectorgrid(ll.x=0, ll.y=0, size.x=2, size.y=3, n.x=10, n.y=5)
+plot(testgrid.spdf)
+sub.spdf &lt;- subset(testgrid, ID==1)
+plot(sub.spdf, add=T, col="red")
+sub.spdf &lt;- subset(testgrid, ID==2)
+plot(sub.spdf, add=T, col="green")
+sub.spdf &lt;- subset(testgrid, ID==11)
+plot(sub.spdf, add=T, col="blue")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

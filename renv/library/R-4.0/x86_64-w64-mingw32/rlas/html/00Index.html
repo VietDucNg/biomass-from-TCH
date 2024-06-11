@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: Read and Write 'las' and 'laz' Binary File Formats Used for
+Remote Sensing Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> Read and Write 'las' and 'laz' Binary File Formats Used for
+Remote Sensing Data
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;rlas&rsquo; version 1.5.0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="check.html">check_las_compliance</a></td>
+<td>Check if data and headers respect the LAS specification</td></tr>
+<tr><td style="width: 25%;"><a href="check.html">check_las_validity</a></td>
+<td>Check if data and headers respect the LAS specification</td></tr>
+<tr><td style="width: 25%;"><a href="crs_tools.html">crs_tools</a></td>
+<td>Coordinate Reference System Tools</td></tr>
+<tr><td style="width: 25%;"><a href="extra_bytes_attribute_tools.html">extra_bytes_attribute_tools</a></td>
+<td>Extra Bytes Attributes Tools</td></tr>
+<tr><td style="width: 25%;"><a href="fwf_interpreter.html">fwf_interpreter</a></td>
+<td>Full Waveform Interpreter</td></tr>
+<tr><td style="width: 25%;"><a href="extra_bytes_attribute_tools.html">header_add_extrabytes</a></td>
+<td>Extra Bytes Attributes Tools</td></tr>
+<tr><td style="width: 25%;"><a href="extra_bytes_attribute_tools.html">header_add_extrabytes_manual</a></td>
+<td>Extra Bytes Attributes Tools</td></tr>
+<tr><td style="width: 25%;"><a href="public_header_block_tools.html">header_create</a></td>
+<td>Public Header Block Tools</td></tr>
+<tr><td style="width: 25%;"><a href="crs_tools.html">header_get_epsg</a></td>
+<td>Coordinate Reference System Tools</td></tr>
+<tr><td style="width: 25%;"><a href="crs_tools.html">header_get_wktcs</a></td>
+<td>Coordinate Reference System Tools</td></tr>
+<tr><td style="width: 25%;"><a href="crs_tools.html">header_set_epsg</a></td>
+<td>Coordinate Reference System Tools</td></tr>
+<tr><td style="width: 25%;"><a href="crs_tools.html">header_set_wktcs</a></td>
+<td>Coordinate Reference System Tools</td></tr>
+<tr><td style="width: 25%;"><a href="public_header_block_tools.html">header_update</a></td>
+<td>Public Header Block Tools</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_compliant_NumberOfReturns</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_compliant_ReturnNumber</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_compliant_ReturnNumber_vs_NumberOfReturns</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_compliant_RGB</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_compliant_ScanAngle</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_compliant_ScanAngleRank</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_coordinates</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_date</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_extrabytes</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_filesourceid</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_globalencoding</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_offsets</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_pointformat</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_scalefactors</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_defined_version</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_empty_point_cloud</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_extrabytes_in_accordance_with_data</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_gpstime_in_valid_format</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_NIR_in_valid_format</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_number_of_points_by_return_in_accordance_with_header</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_number_of_points_in_accordance_with_header</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_RGB_in_valid_format</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_ScanAngle_in_valid_format</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_ScannerChannel_in_valid_format</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_Classification</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_date</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_EdgeOfFlightline</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_extrabytes</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_filesourceid</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_globalencoding</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_gpstime</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_Intensity</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_KeypointFlag</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_NIR</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_NumberOfReturns</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_offsets</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_OverlapFlag</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_pointformat</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_PointSourceID</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_ReturnNumber</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_RGB</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_scalefactors</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_ScanAngle</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_ScanAngleRank</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_ScanDirectionFlag</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_ScannerChannel</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_SyntheticFlag</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_UserData</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_version</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_WithheldFlag</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_valid_XYZ</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_XY_larger_than_bbox</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_XY_smaller_than_bbox</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">is_Z_in_bbox</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="las_specification_tools.html">las_specification_tools</a></td>
+<td>A set of function to test conformance with LAS specifications</td></tr>
+<tr><td style="width: 25%;"><a href="public_header_block_tools.html">public_header_block_tools</a></td>
+<td>Public Header Block Tools</td></tr>
+<tr><td style="width: 25%;"><a href="read.las.html">read.las</a></td>
+<td>Read data from a .las or .laz file</td></tr>
+<tr><td style="width: 25%;"><a href="read.lasheader.html">read.lasheader</a></td>
+<td>Read header from a .las or .laz file</td></tr>
+<tr><td style="width: 25%;"><a href="write.las.html">write.las</a></td>
+<td>Write a .las or .laz file</td></tr>
+<tr><td style="width: 25%;"><a href="writelax.html">writelax</a></td>
+<td>Write a .lax file from a .las or .laz file</td></tr>
+</table>
+</body></html>

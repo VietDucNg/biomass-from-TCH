@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate fractional canopy cover (FCC) from XYZ-dataframe</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc.FCC.from.point.cloud {slidaRtools}"><tr><td>calc.FCC.from.point.cloud {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate fractional canopy cover (FCC) from XYZ-dataframe</h2>
+
+<h3>Description</h3>
+
+<p>Function to calculate FCC from the point cloud in XYZ-dataframe format for a
+custom pixel size and height threshold.
+FCC is the relative share of all CHM pixels values above a height threshold.
+The CHM is generated internally from the point cloud by rasterizing the highest
+return in each pixel of a given resolution.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc.FCC.from.point.cloud(XYZdf, pxl.res = 1, h.threshold = 1)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>XYZdf</code></td>
+<td>
+<p>Point cloud in XYZ-dataframe format</p>
+</td></tr>
+<tr valign="top"><td><code>pxl.res</code></td>
+<td>
+<p>Side length of CHM pixel</p>
+</td></tr>
+<tr valign="top"><td><code>h.threshold</code></td>
+<td>
+<p>Height threshold (pixels with the exact threshold value are included as canopy)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Fractional canopy cover (FCC) as a value between 0 and 1
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

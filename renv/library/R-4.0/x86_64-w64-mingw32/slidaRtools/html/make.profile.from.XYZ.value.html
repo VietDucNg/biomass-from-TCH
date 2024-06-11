@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Derive a vertical profile of a point cloud for a certain...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for make.profile.from.XYZ.value {slidaRtools}"><tr><td>make.profile.from.XYZ.value {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Derive a vertical profile of a point cloud for a certain variable</h2>
+
+<h3>Description</h3>
+
+<p>Function that creates profiles of a certain statistic of a certain variable
+from XYZ-tables with a custom height resolution (binwidth)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+make.profile.from.XYZ.value(XYZ.value.table, binwidth = 1, stat = "sum")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>XYZ.value.table</code></td>
+<td>
+<p>4-column data frame with 3rd column containing heights and 4th column containing values for which to make the profile</p>
+</td></tr>
+<tr valign="top"><td><code>binwidth</code></td>
+<td>
+<p>number specifying the vertical width of height classes</p>
+</td></tr>
+<tr valign="top"><td><code>stat</code></td>
+<td>
+<p>desired statistic (&quot;sum&quot;, &quot;count&quot;, &quot;max&quot;, &quot;min&quot;, &quot;mean&quot;, &quot;median&quot;)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>vector of point or pixel counts per height class with height values as names
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

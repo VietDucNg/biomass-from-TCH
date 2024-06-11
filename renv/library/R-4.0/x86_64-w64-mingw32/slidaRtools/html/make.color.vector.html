@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Make a color vector</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for make.color.vector {slidaRtools}"><tr><td>make.color.vector {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Make a color vector</h2>
+
+<h3>Description</h3>
+
+<p>Function that takes a vector of values and a desired color palette and returns
+color values that correspond to each vector value.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+make.color.vector(vec, palette = NA, min = NA, max = NA, step = 1, alpha = 1)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>vec</code></td>
+<td>
+<p>Value vector</p>
+</td></tr>
+<tr valign="top"><td><code>min</code></td>
+<td>
+<p>Minimum value to consider for the scaling of the color values (may subceed the value vector)</p>
+</td></tr>
+<tr valign="top"><td><code>max</code></td>
+<td>
+<p>Maximum value to consider for the scaling of the color values (may exceed the value vector)</p>
+</td></tr>
+<tr valign="top"><td><code>step</code></td>
+<td>
+<p>Step width between values to consider for the scaling of the color values</p>
+</td></tr>
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>Transparency from 0 = fully transparent to 1 = fully opaque</p>
+</td></tr>
+<tr valign="top"><td><code>col.palette</code></td>
+<td>
+<p>Color palette, e.g. default R palettes or created with colorRampPalette function</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Vector of color codings with the same length and order as the input vector
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

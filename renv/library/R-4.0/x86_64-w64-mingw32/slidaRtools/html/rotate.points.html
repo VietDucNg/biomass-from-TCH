@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rotate points around X-, Y- or Z-axis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for rotate.points {slidaRtools}"><tr><td>rotate.points {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Rotate points around X-, Y- or Z-axis</h2>
+
+<h3>Description</h3>
+
+<p>Function to rotate a given set of points or point cloud in a
+plain around center point with a certain angle.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+rotate.points(cor.df, rot.angle, rot.axis = "Z", center = c(0, 0, 0))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>cor.df</code></td>
+<td>
+<p>Coordinate dataframe with columns containing X-, Y- and Z-coordinate (at least
+two columns are required and names need to be &quot;X&quot;, &quot;Y&quot; or &quot;Z&quot;, respectively)</p>
+</td></tr>
+<tr valign="top"><td><code>rot.angle</code></td>
+<td>
+<p>Rotation angle in degrees (clockwise rotation)</p>
+</td></tr>
+<tr valign="top"><td><code>rot.axis</code></td>
+<td>
+<p>Rotation axis (default is &quot;Z&quot;, can also be set to &quot;X&quot; or &quot;Y&quot;)</p>
+</td></tr>
+<tr valign="top"><td><code>center</code></td>
+<td>
+<p>Vector of three elements specifying the  X-, Y- and Z-coordinate of the rotation center point</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Coordinate dataframe with X- and Y-coordinates after rotation
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

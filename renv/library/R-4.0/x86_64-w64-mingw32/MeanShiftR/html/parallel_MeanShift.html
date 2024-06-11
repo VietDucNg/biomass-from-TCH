@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Parallel application of mean shift clustering for individual...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for parallel_MeanShift {MeanShiftR}"><tr><td>parallel_MeanShift {MeanShiftR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Parallel application of mean shift clustering for individual tree crown delineation</h2>
+
+<h3>Description</h3>
+
+<p>The function provides the frame work to apply the adaptive mean shift 3D (AMS3D) algorithm on several
+sub point clouds of a large investigation area in parallel. It requires a list of sub point clouds as
+input and returns one large clustered point cloud as output. The input should have buffer zones around
+the focal areas. The buffer width should correspond to at least the maximal possible tree crown radius.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+parallel_MeanShift(
+  pc.list,
+  lib.path = NA,
+  frac.cores = 0.5,
+  version = "classic",
+  H2CW = 0.3,
+  H2CL = 0.4,
+  max.iter = 20,
+  buffer.width = 10,
+  minz = 2,
+  ctr.ac = 2
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>pc.list</code></td>
+<td>
+<p>List of point clouds in data.table format containing columns X, Y and Z (produced by split_BufferedPointCloud function)</p>
+</td></tr>
+<tr valign="top"><td><code>lib.path</code></td>
+<td>
+<p>String specifying the path from where to load the R packages. Should be set to .libPaths()[1].</p>
+</td></tr>
+<tr valign="top"><td><code>frac.cores</code></td>
+<td>
+<p>Fraction of available cores to use for parallelization</p>
+</td></tr>
+<tr valign="top"><td><code>version</code></td>
+<td>
+<p>of the AMS3D algorithm. Can be set to &quot;classic&quot; (slow but precise also with small trees) or &quot;voxel&quot; (fast but based on rounded coordinates of 1-m precision)</p>
+</td></tr>
+<tr valign="top"><td><code>H2CW</code></td>
+<td>
+<p>Factor for the ratio of height to crown width. Determines kernel diameter based on its height above ground.</p>
+</td></tr>
+<tr valign="top"><td><code>H2CL</code></td>
+<td>
+<p>Factor for the ratio of height to crown length. Determines kernel height based on its height above ground.</p>
+</td></tr>
+<tr valign="top"><td><code>max.iter</code></td>
+<td>
+<p>Maximum number of iterations, i.e. steps that the kernel can move for each point. If centroid is not found after all iteration, the last position is assigned as centroid and the processing jumps to the next point</p>
+</td></tr>
+<tr valign="top"><td><code>buffer.width</code></td>
+<td>
+<p>Width of the buffer around the core area in meters</p>
+</td></tr>
+<tr valign="top"><td><code>minz</code></td>
+<td>
+<p>Minimum height above ground for a point to be considered in the analysis. Has to be &gt; 0.</p>
+</td></tr>
+<tr valign="top"><td><code>ctr.ac</code></td>
+<td>
+<p>Centroid accuracy. Specifies the rounding accuracy for centroid positions. After rounding all centroids with the same coordinates are considered to belong to one tree crown.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.table of point cloud with points labelled with tree IDs
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>MeanShiftR</em> version 0.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

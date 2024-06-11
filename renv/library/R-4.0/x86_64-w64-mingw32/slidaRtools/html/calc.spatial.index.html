@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate spatial indices for points in 2D space</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc.spatial.index {slidaRtools}"><tr><td>calc.spatial.index {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate spatial indices for points in 2D space</h2>
+
+<h3>Description</h3>
+
+<p>Function that returns spatial indices (plot numbers) for given coordinate pairs.
+E.g. for hectares res = 100 m
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc.spatial.index(
+  xcor,
+  ycor,
+  res = 1,
+  minx = NA,
+  miny = NA,
+  maxx = NA,
+  maxy = NA,
+  exclude.maxx = T
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>xcor</code></td>
+<td>
+<p>X-coordinate of the point</p>
+</td></tr>
+<tr valign="top"><td><code>ycor</code></td>
+<td>
+<p>Y-coordinate of the point</p>
+</td></tr>
+<tr valign="top"><td><code>res</code></td>
+<td>
+<p>side length of one spatial subunit</p>
+</td></tr>
+<tr valign="top"><td><code>minx</code></td>
+<td>
+<p>minimum X-coordinate</p>
+</td></tr>
+<tr valign="top"><td><code>miny</code></td>
+<td>
+<p>minimum Y-coordinate</p>
+</td></tr>
+<tr valign="top"><td><code>maxx</code></td>
+<td>
+<p>maximum X-coordinate</p>
+</td></tr>
+<tr valign="top"><td><code>maxy</code></td>
+<td>
+<p>maximum Y-coordinate</p>
+</td></tr>
+<tr valign="top"><td><code>exclude.maxx</code></td>
+<td>
+<p>boolean to set whether the given maxx should be excluded or included in the indexing</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>spatial index for the input point
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

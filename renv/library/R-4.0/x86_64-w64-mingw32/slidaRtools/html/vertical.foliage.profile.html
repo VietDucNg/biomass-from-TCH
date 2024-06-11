@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Derive a vertical foliage profile (VFP) from a Lidar profile</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for vertical.foliage.profile {slidaRtools}"><tr><td>vertical.foliage.profile {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Derive a vertical foliage profile (VFP) from a Lidar profile</h2>
+
+<h3>Description</h3>
+
+<p>Function that returns the vertical foliage profile for a given Lidar profile
+using the approach of Harding et al. (2001) which is based on the MacArthur-Horn
+method.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+vertical.foliage.profile(profile, h.bin = 1, GR.threshold = 5, k = 0.5)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>profile</code></td>
+<td>
+<p>Vector of Lidar profile (with heights as names)</p>
+</td></tr>
+<tr valign="top"><td><code>h.bin</code></td>
+<td>
+<p>Vertical extent of one height bin</p>
+</td></tr>
+<tr valign="top"><td><code>GR.threshold</code></td>
+<td>
+<p>Height threshold below which everything is regarded as ground
+return (GR) and ignored in the processing</p>
+</td></tr>
+<tr valign="top"><td><code>k</code></td>
+<td>
+<p>Light extinction coefficient, which is an adjustment factor from relative
+to absolute (LAD) VFP</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Vector of the vertical foliage profile (VFP)
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+prof.vec &lt;- c(9, 2, 4, 5, 6, 3, 1)
+names(prof.vec) &lt;- 0:6
+vfp.vec &lt;- vertical.foliage.profile(profile=prof.vec, h.bin=1, GR.threshold=1, k=0.5)
+plot(names(prof.vec) ~ prof.vec, type="l", xlab="Lidar returns", ylab="Height [m]")
+plot(names(vfp.vec) ~ vfp.vec, type="l", xlab="LAD [m2/m3]", ylab="Height [m]")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

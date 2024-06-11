@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fill raster gaps</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gapfill {slidaRtools}"><tr><td>gapfill {slidaRtools}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fill raster gaps</h2>
+
+<h3>Description</h3>
+
+<p>Function that fills gaps in a raster.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+gapfill(
+  in.ras,
+  fill.window.size = 5,
+  fill.window.type = "circle",
+  fill.value = "mean"
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>in.ras</code></td>
+<td>
+<p>Input raster</p>
+</td></tr>
+<tr valign="top"><td><code>fill.window.size</code></td>
+<td>
+<p>Radius of the window around the focal pixel from which a filling value is calculated</p>
+</td></tr>
+<tr valign="top"><td><code>fill.window.type</code></td>
+<td>
+<p>Shape of the window must be &quot;circle&quot; or &quot;rectangle&quot;</p>
+</td></tr>
+<tr valign="top"><td><code>fill.value</code></td>
+<td>
+<p>Replacing value, e.g. &quot;mean&quot;, &quot;min&quot;, &quot;max&quot;, of the filling window or simply 0 or NA</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Filled raster object
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Nikolai Knapp, nikolai.knapp@ufz.de
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+in progress
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>slidaRtools</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

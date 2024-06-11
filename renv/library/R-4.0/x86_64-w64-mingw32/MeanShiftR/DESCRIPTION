@@ -1,0 +1,36 @@
+Package: MeanShiftR
+Type: Package
+Title: Tree delineation from lidar using mean shift clustering
+Version: 0.1.1
+Author: Nikolai Knapp
+Maintainer: Nikolai Knapp <nikolai.knapp@ufz.de>
+Description: The package allows individual tree crown delineation (ITCD) from 
+	airborne laser scanning point clouds (lidar) using the Adaptive Mean Shift 
+	3D (AMS3D) clustering algorithm described by Ferraz et al. (2016). It 
+	further	contains functions for parallelization of the clustering and post-
+	processing such as fitting polygons around tree crowns and matching 
+	detected crowns with stem positions on the ground.
+	Reference: Ferraz, A., Saatchi, S., Mallet, C. and Meyer, V. (2016). 
+	Lidar detection of individual tree size in tropical forests. 
+	Remote Sensing of Environment. [Online]. 183. p.pp. 318-333.    
+License: GPL-3
+LazyData: TRUE
+Depends: data.table
+Imports: cluster, pbapply, plyr, Rcpp (>= 0.12.9), rgeos, sp, tripack,
+        raster
+LinkingTo: Rcpp
+RoxygenNote: 7.1.0
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: MeanShiftR
+RemoteUsername: niknap
+RemoteRef: HEAD
+RemoteSha: 9004f803af26c54b59ff7e4c8d963621dd637b3a
+GithubRepo: MeanShiftR
+GithubUsername: niknap
+GithubRef: HEAD
+GithubSHA1: 9004f803af26c54b59ff7e4c8d963621dd637b3a
+NeedsCompilation: yes
+Packaged: 2020-10-11 13:19:42 UTC; knappn
+Built: R 4.0.2; x86_64-w64-mingw32; 2020-10-11 13:19:44 UTC; windows
+Archs: i386, x64
