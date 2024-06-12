@@ -1,9 +1,0 @@
-calc_SpatialIndex	calc_SpatialIndex
-hello	hello
-make_CrownPolygons	make_CrownPolygons
-match_CrownsStems	match_CrownsStems
-MeanShift_Classical	MeanShift_Classical
-MeanShift_Voxels	MeanShift_Voxels
-parallel_MeanShift	parallel_MeanShift
-rcpp_hello	rcpp_hello
-split_BufferedPointCloud	split_BufferedPointCloud
