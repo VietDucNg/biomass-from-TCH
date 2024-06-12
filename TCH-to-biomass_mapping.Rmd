@@ -1,5 +1,5 @@
 ---
-title: "Forest biomass map based on mean top-of-canopy height"
+title: "Forest biomass mapping based on mean top-of-canopy height"
 author:
 - name: <br>Viet Nguyen
   affiliation: Faculty of Forest and Environment <br> Eberswalde University for Sustainable
@@ -9,41 +9,47 @@ date: "September, 2022"
 output:
   html_document:
     df_print: paged
-subtitle: ''
+subtitle: 'The study aims to create a forest biomass map in Eberswalde, Germany based on mean top-of-canopy height (TCH) raster model. In the first step, a point cloud of Traunstein forest and inventory data were used to derive TCH-to-biomass relationship in Traunstein forest. We assume that the TCH-to-biomass relationship in Traunstein forest is similar with that of Eberswalde forest. With this assumption, in the second step, using the Traunstein TCH-to-biomass relationship to predict or map biomass in Eberswalde.'
 ---
 
 \
 
-> 🛈 Information: This project was hosted at [GitHub]().
+> 🛈 Information: This project was hosted at [GitHub](https://github.com/VietDucNg/biomass-from_TCH).
 
-> 🗃️ Data: [20 LiDAR scanning tiles]()
-
-> 📒 abstract: The study aims to create a forest biomass map in Eberswalde, Germany based on mean top-of-canopy height (TCH) raster model. [In the first step](#step1), a point cloud of Traunstein forest and inventory data were used to derive TCH-to-biomass relationship in Traunstein forest. We assume that the TCH-to-biomass relationship in Traunstein forest is similar with that of Eberswalde forest. With this assumption, [in the second step](#step2), using the Traunstein TCH-to-biomass relationship to predict or map biomass in Eberswalde.
+> 💾 Data:
+> [Eberswalde forest point cloud](https://github.com/VietDucNg/biomass-from_TCH/blob/main/data/Eberswalde/419500_5853000.laz)\
+> [Traunstein forest point cloud](https://github.com/VietDucNg/biomass-from_TCH/blob/main/data/Traunstein/Subplot_PointCloud_Transformed.rds)\
+> [Traunstein forest inventory](https://github.com/VietDucNg/biomass-from_TCH/blob/main/data/Traunstein/Subplot_Inventory.rds)
 
 \
 
 # Prepare workspace
 
-> 📝 note: To ensure reproduce R environment, this project provide *renv* and *R-4.02* folder.
+> 📝 note: To ensure reproduce R environment, this project provide **renv** and **R-4.02** folder.
 
-```{r eval=FALSE}
+```{r}
 # check working directory
 getwd()
 
 # Check path which R loads the packages from
 .libPaths()
+```
 
+```{r eval=FALSE}
 # change path to renv folder which R should loads packages from
 getwd()
 .libPaths(new=paste0(getwd(), "/renv/library/R-4.0/x86_64-w64-mingw32"))
 .libPaths()
 
 # load packages
+library(slidaRtools)
+```
+
+```{r}
 library(data.table)
 library(raster)
 library(rgl)
 library(lidR)
-library(slidaRtools)
 
 ## prepare parallel processing with lidR
 # get how many CPU threads lidR using
@@ -52,7 +58,6 @@ get_lidr_threads()
 set_lidr_threads(0.8) # recommended to use maximum 80% of total threads
 # check how many CPU threads lidR using again
 get_lidr_threads()
-
 ```
 
 \
@@ -72,24 +77,51 @@ display.point.cloud(pc.df, size=2)
 
 ![](img/traunstein_pc.png)
 
-```{r}
+```{r eval=FALSE}
 # derive canopy height model (CHM) from point cloud
 chm.ras <- raster.from.point.cloud(pc.df, res=1, func="max")
+```
+
+```{r include=FALSE}
+chm.ras = readRDS('workspace/chm.rds')
+```
+
+```{r}
 plot(chm.ras)
 chm.ras
 ```
 
-```{r}
+```{r eval=FALSE}
 # Convert (melt) the CHM from a raster into to a XYZ-table
 chm.df <- ras2xyzdf(chm.ras)
+```
+
+```{r include=FALSE}
+chm.df = readRDS('workspace/chm_df.rds')
+chm.df = chm.df[,1:3]
+```
+
+
+```{r}
 head(chm.df)
 ```
 
-```{r}
+```{r eval=FALSE}
 # Assign spatial grid indices (to each CHM pixel) with a plot resolution of 50 m
 chm.df$SpatID <- calc.spatial.index(xcor=chm.df$X, ycor=chm.df$Y, res=50)
+```
+
+```{r include=FALSE}
+chm.df = readRDS('workspace/chm_df.rds')
+```
+
+```{r}
+# spatial grid indices columns (SpatID) was added
 head(chm.df)
 tail(chm.df)
+```
+
+```{r eval=FALSE}
 display.point.cloud(chm.df, col.var="SpatID", col.lim=c(1, 72))
 ```
 
@@ -106,14 +138,26 @@ head(agg.chm.dt)
 ```{r}
 # Load Traunstein inventory data
 inv.df <- readRDS("Data\\Traunstein\\Subplot_Inventory.rds")
-head(inv.df)
 ```
 
 ```{r}
+# take a look at the inventory data
+head(inv.df)
+```
+
+```{r eval=FALSE}
 # Assign spatial grid indices (to each tree) with a plot resolution of 50 m
 inv.df$SpatID <- calc.spatial.index(xcor=inv.df$X, ycor=inv.df$Y, res=50)
-head(inv.df)
+```
 
+```{r include=FALSE}
+inv.df = readRDS('workspace/inv_df.rds')
+```
+
+
+```{r}
+# take a look, SpatID column was added
+head(inv.df)
 ```
 
 ```{r}
@@ -159,14 +203,16 @@ ew.las <- lidR::readLAS("data\\Eberswalde\\419500_5853000.laz")
 # Get only the lidar data.table from the las object
 ew.dt <- ew.las@data
 head(ew.dt)
+```
 
+```{r eval=FALSE}
 # Plot the point cloud
 plot(ew.las)
 ```
 
 ![](img/eber_pc.png)
 
-The study area in Eberswalde includes ground and building area which are not our interest for biomass mapping. In the next steps, we classify the point cloud and set height values of points classified as ground or building to 0. 
+The study area in Eberswalde includes ground and building area which are not our interest for biomass mapping. In the next steps, we classify the point cloud and set height values of points classified as ground or building to 0.
 
 ```{r}
 # Classify ground returns
@@ -182,22 +228,23 @@ ew.las <- segment_shapes(las=ew.las,
                          filter= ~Classification != 2L)
 # Label all points as buildings, for which 20% or more of their neighbors are planar
 metrics <- point_metrics(ew.las, ~list(PlanarNeighborhood=mean(planar)), k=10)  
-ew.las <- add_attribute(ew.las, x=ifelse(metrics$PlanarNeighborhood < 0.2, 0, 1), 
-                        name="Building")
+ew.las <- add_attribute(ew.las, x=ifelse(metrics$PlanarNeighborhood < 0.2, 0, 1),name="Building")
 
 # check classification
 head(ew.las)
-table(ew.las$Building)
-table(ew.las$planar)
+table(ew.las@data$Building)
+table(ew.las@data$planar)
+```
 
+```{r eval=FALSE}
 # plot Eberswalde point cloud with building coloring
 plot(ew.las, color = "Building")
 ```
 
 ![](img/eber_pc_building.png)
 
-```{r}
-# plot Eberswalde point cloud with building coloring
+```{r eval=FALSE}
+# plot Eberswalde point cloud with planar coloring
 plot(ew.las, color = "planar")
 ```
 
@@ -206,8 +253,11 @@ plot(ew.las, color = "planar")
 ```{r}
 # Terrain normalize the point cloud
 norm.ew.las <- lidR::normalize_height(ew.las, knnidw())
+```
+
+```{r eval=FALSE}
+# plot terrain normalized point cloud
 plot(norm.ew.las)
-plot(norm.ew.las, color = "Building")
 ```
 
 ![](img/eber_pc_norm.png)
@@ -222,15 +272,25 @@ norm.ew.df <- data.frame(norm.ew.dt)
 norm.ew.df[norm.ew.df$Building == 1, "Z"] <- 0
 # Set all points planar area to height 0 
 norm.ew.df[norm.ew.df$planar, 'Z'] =0
+```
+
+```{r eval=FALSE}
 # Check if the buildings have disappeared
 display.point.cloud(norm.ew.df)
 ```
 
 ![](img/eber_pc_non_building.png)
 
-```{r}
+```{r eval=FALSE}
 # create CHM for Eberswalde forest
 ew.chm.ras <- raster.from.point.cloud(norm.ew.dt, res=1, func="max")
+```
+
+```{r include=FALSE}
+ew.chm.ras = readRDS('workspace/ew_chm_ras.rds')
+```
+
+```{r}
 ew.chm.ras
 plot(ew.chm.ras)
 ```
@@ -260,18 +320,34 @@ crs(agb.50m.ras) <- CRS("+init=epsg:32633")
 
 ```
 
-
 ## 3.2. Spatial indexing: the versatile preference
 
 This approach does not use raster aggregation. Instead conversion to XYZ-table and spatial indexing is used. This solution is not restricted to raster metrics, i.e., it also works for making maps from point cloud metrics.
 
-```{r}
+```{r eval=FALSE}
 # Convert the CHM to a XYZ-table
 ew.chm.df <- ras2xyzdf(ew.chm.ras)
-head(ew.chm.df)
+```
 
+```{r include=FALSE}
+ew.chm.df = readRDS('workspace/ew_chm_df.rds')
+ew.chm.df = ew.chm.df[,1:3]
+```
+
+```{r}
+head(ew.chm.df)
+```
+```{r eval=FALSE}
 # Calculate spatial ID for the CHM data.frame (i.e. each raster pixel)
 ew.chm.df$PlotID <- calc.spatial.index(xcor=ew.chm.df$X, ycor=ew.chm.df$Y, res=50)
+```
+
+```{r include=FALSE}
+ew.chm.df = readRDS('workspace/ew_chm_df.rds')
+```
+
+
+```{r}
 head(ew.chm.df)
 
 # Aggregate the CHM for top-of-canopy height (TCH)
@@ -311,14 +387,3 @@ plot(agb.50m.ras, main='approach 1')
 plot(agb.50m.ras2, main='approach 2')
 
 ```
-
-
-
-
-
-
-
-
-
-
-
